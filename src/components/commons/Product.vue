@@ -27,7 +27,11 @@
         </li>
         <li>
           <strong>Voto: </strong>
-          <span v-for="(element, index) in getRating()" :key="index">★</span>
+          <i
+            v-for="(element, index) in getRating()"
+            :key="index"
+            class="fas fa-star rating-star"
+          ></i>
         </li>
       </ul>
     </div>
@@ -85,6 +89,10 @@ export default {
 
         .lang {
           width: 32px;
+        }
+
+        .rating-star {
+          color: #ffd700;
         }
       }
     }
