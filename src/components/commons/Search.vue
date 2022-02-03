@@ -1,6 +1,10 @@
 <template>
   <div class="search">
-    <input type="text" v-model.trim="inputSearch" />
+    <input
+      type="text"
+      v-model.trim="inputSearch"
+      @keyup.enter="$emit('research', inputSearch)"
+    />
     <input
       type="submit"
       value="Cerca"
