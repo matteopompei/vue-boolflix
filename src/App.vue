@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <header>
-      <a href="#" class="logo">Boolflix</a>
+      <a href="#" class="logo"
+        ><img src="./assets/img/boolflix.png" alt="Boolflix"
+      /></a>
       <Search @research="getResearch" />
     </header>
     <main>
