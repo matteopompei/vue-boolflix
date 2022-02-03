@@ -5,11 +5,13 @@
       <Search @research="getResearch" />
     </header>
     <main>
-      <Product
-        v-for="(element, index) in moviesArr"
-        :key="index"
-        :product="element"
-      />
+      <div class="container">
+        <Product
+          v-for="(element, index) in moviesArr"
+          :key="index"
+          :product="element"
+        />
+      </div>
     </main>
   </div>
 </template>
@@ -77,7 +79,16 @@ header {
 }
 
 main {
-  background: #191919;
+  padding: 50px 0;
   min-height: calc(100vh - 87px);
+  background: #191919;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: auto;
+    width: 85%;
+  }
 }
 </style>
