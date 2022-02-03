@@ -60,6 +60,7 @@ export default {
   width: 250px;
   height: 350px;
   background: #000;
+  cursor: pointer;
 
   .poster {
     width: 250px;

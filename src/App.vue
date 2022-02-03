@@ -110,7 +110,7 @@ header {
 
 main {
   padding: 50px 100px;
-  min-height: calc(100vh - 87px);
+  min-height: calc(100vh - 144px);
   background: #191919;
 
   .title {
