@@ -4,6 +4,13 @@
       :src="'https://image.tmdb.org/t/p/w342' + product.poster_path"
       :alt="product.original_title"
       class="poster"
+      v-if="product.poster_path != null"
+    />
+    <img
+      src="../../assets/img/poster-notfound.png"
+      alt=""
+      class="poster"
+      v-else
     />
     <div class="info">
       <ul>
