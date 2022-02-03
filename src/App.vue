@@ -17,7 +17,7 @@
       <div class="title">Series</div>
       <div class="container">
         <Product
-          v-for="(element, index) in moviesArr"
+          v-for="(element, index) in seriesArr"
           :key="index"
           :product="element"
         />
