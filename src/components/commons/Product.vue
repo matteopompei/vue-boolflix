@@ -1,19 +1,26 @@
 <template>
   <div class="product">
-    <ul>
-      <li>{{ product.title }}</li>
-      <li>{{ product.original_title }}</li>
-      <li>
-        <img
-          :src="
-            require(`../../assets/img/flags/${product.original_language}.svg`)
-          "
-          alt=""
-          class="lang"
-        />
-      </li>
-      <li>{{ product.vote_average }}</li>
-    </ul>
+    <img
+      :src="'https://image.tmdb.org/t/p/w342' + product.poster_path"
+      :alt="product.original_title"
+      class="poster"
+    />
+    <div class="info">
+      <ul>
+        <li><strong>Titolo:</strong> {{ product.title }}</li>
+        <li><strong>Titolo originale:</strong> {{ product.original_title }}</li>
+        <li>
+          <img
+            :src="
+              require(`../../assets/img/flags/${product.original_language}.svg`)
+            "
+            :alt="product.original_language"
+            class="lang"
+          />
+        </li>
+        <li><strong>Voto:</strong> {{ product.vote_average }}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -30,19 +37,40 @@ export default {
 @import "../../assets/style/global.scss";
 
 .product {
-  padding: 5px 15px;
+  position: relative;
   width: 250px;
-  height: fit-content;
+  height: 350px;
   background: #000;
 
-  ul {
-    list-style: none;
+  .poster {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+  }
 
-    li {
-      margin: 10px 0;
+  .info {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 350px;
+    opacity: 0;
+    padding: 5px 15px;
+    background: #000;
+    transition: opacity 0.3s;
 
-      .lang {
-        width: 32px;
+    &:hover {
+      opacity: 1;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        margin: 10px 0;
+
+        .lang {
+          width: 32px;
+        }
       }
     }
   }

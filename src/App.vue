@@ -107,7 +107,7 @@ header {
 }
 
 main {
-  padding: 50px 0;
+  padding: 50px 100px;
   min-height: calc(100vh - 87px);
   background: #191919;
 
