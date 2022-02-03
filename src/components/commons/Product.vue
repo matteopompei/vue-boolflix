@@ -14,8 +14,11 @@
     />
     <div class="info">
       <ul>
-        <li><strong>Titolo:</strong> {{ product.title }}</li>
-        <li><strong>Titolo originale:</strong> {{ product.original_title }}</li>
+        <li><strong>Titolo:</strong> {{ product.title }} {{ product.name }}</li>
+        <li>
+          <strong>Titolo originale:</strong> {{ product.original_title }}
+          {{ product.original_name }}
+        </li>
         <li>
           <img
             :src="
