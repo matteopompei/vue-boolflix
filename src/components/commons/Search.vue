@@ -1,13 +1,22 @@
 <template>
   <div class="search">
-    <input type="text" />
-    <input type="submit" value="Cerca" />
+    <input type="text" v-model.trim="inputSearch" />
+    <input
+      type="submit"
+      value="Cerca"
+      @click="$emit('research', inputSearch)"
+    />
   </div>
 </template>
 
 <script>
 export default {
   name: "Search",
+  data() {
+    return {
+      inputSearch: "",
+    };
+  },
 };
 </script>
 
