@@ -25,7 +25,10 @@
             class="lang"
           />
         </li>
-        <li><strong>Voto:</strong> {{ product.vote_average }}</li>
+        <li>
+          <strong>Voto: </strong>
+          <span v-for="(element, index) in getRating()" :key="index">★</span>
+        </li>
       </ul>
     </div>
   </div>
@@ -36,6 +39,11 @@ export default {
   name: "Product",
   props: {
     product: Object,
+  },
+  methods: {
+    getRating() {
+      return Math.round(this.product.vote_average / 2);
+    },
   },
 };
 </script>
